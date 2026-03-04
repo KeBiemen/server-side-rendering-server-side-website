@@ -1,0 +1,58 @@
+/* STIJLGUIDE — Overlegplatform Ad's */
+ 
+/* 1) DESIGN TOKENS */
+:root{
+  /* KLEUREN (merk) */
+  --merk-900:#000C1A;
+  --merk-700:#002A5C;
+  --merk-500:#0058C2;
+  --merk-400:#006FF5;
+  --merk-100:#C2DDFF;
+ 
+  /* ACCENT (oranje/rood) */
+  --accent-600:#CD3618;
+  --accent-500:#E75234;
+ 
+  /* NEUTRALS */
+  --n-900:#13171D;
+  --n-500:#435264;
+  --n-100:#D2D5D9;
+ 
+  /* THEMA (donkere site) */
+  --bg: var(--merk-700);
+  --tekst: #fff;
+  --tekst-zacht: rgba(255,255,255,.85);
+  --lijn: rgba(255,255,255,.35);
+ 
+  /* “Glass” surfaces */
+  --surface: rgba(0,0,0,.35);
+  --surface-2: rgba(0,0,0,.22);
+  --border: rgba(255,255,255,.16);
+ 
+  /* TYPOGRAFIE */
+  --font: system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  --line: 1.6;
+ 
+  /* RADIUS & SHADOW */
+  --r: 18px;
+  --r-afb: 26px;
+  --shadow: 0 10px 22px rgba(0,0,0,.16);
+ 
+  /* SPACING  */
+  --s2:.5rem;   /* 8px */
+  --s3:.75rem;  /* 12px */
+  --s4:1rem;    /* 16px */
+  --s5:1.5rem;  /* 24px */
+  --s6:2rem;    /* 32px */
+  --s7:3rem;    /* 48px */
+ 
+  /* LAYOUT */
+  --container: 1200px;
+}
+ 
+header{width: 100%;
+  display: flex;
+  position: sticky;
+  top: 0;
+  justify-content: center;
+  z-index: 99;}
