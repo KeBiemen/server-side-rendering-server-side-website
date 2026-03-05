@@ -40,7 +40,49 @@ app.set('views', './views')
 app.get('/', async function (request, response) {
    // Render index.liquid uit de Views map
    // Geef hier eventueel data aan mee
-   response.render('index.liquid')
+   console.log(apiResponseJSON)
+   response.render('index.liquid', {nominaties: apiResponseJSON.data} )
+})
+
+// ROUTE: GENOMINEERDE STUDENTEN PAGINA
+// Deze route toont een pagina met genomineerde studenten
+// De data hieronder is dummy data (tijdelijke testdata)
+
+app.get('/award', async function (request, response) {
+
+  // Maak een array met genomineerde studenten
+  // Elke student heeft een naam, school en afbeelding
+  const nominees = [
+    {
+      name: "Thijs Kiens",
+      school: "Avans Academie Associate degrees",
+     
+    },
+    {
+      name: "Vera Driessen",
+      school: "Fontys",
+     
+    },
+    {
+      name: "Josien te Winkel",
+      school: "Grenslandcollege",
+     
+    },
+    {
+      name: "Rick Snijder",
+      school: "Hanze",
+    
+    },
+    {
+      name: "Stan van Roessel",
+      school: "HAS",
+     
+    }
+  ]
+
+  // Render de Liquid view 'genomineerden.liquid'
+  // en geef de dummy data (nominees) mee aan de template
+  response.render('genomineerden.liquid', { nominees: nominees })
 })
 
 // Maak een POST route voor de index; hiermee kun je bijvoorbeeld formulieren afvangen

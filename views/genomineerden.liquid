@@ -1,0 +1,41 @@
+hey
+
+  <!-- GENOMINEERDEN -->
+  <section class="genomineerden-sectie">
+
+    <header>
+      <h2>Genomineerden</h2>
+    </header>
+
+    <ul>
+
+      {% comment %} Check of er genomineerden zijn {% endcomment %}
+      {% if nominees and nominees.size %}
+
+        {% comment %} Loop door alle genomineerden uit server.js {% endcomment %}
+        {% for student in nominees %}
+          <li>
+            <article class="genomineerde-kaart">
+
+              <figure class="kaart-afbeelding">
+                <img src="{{ student.image }}" alt="{{ student.name }}" width="220" height="220">
+              </figure>
+
+              <header class="kaart-inhoud">
+                <h3>{{ student.name }}</h3>
+                <p>{{ student.school }}</p>
+              </header>
+
+            </article>
+          </li>
+        {% endfor %}
+
+      {% else %}
+
+        <p>Er zijn nog geen genomineerden.</p>
+
+      {% endif %}
+
+    </ul>
+
+  </section>
