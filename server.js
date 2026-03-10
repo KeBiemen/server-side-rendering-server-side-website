@@ -8,14 +8,14 @@ import { Liquid } from 'liquidjs';
 
 console.log('Hieronder moet je waarschijnlijk nog wat veranderen')
 // Doe een fetch naar de data die je nodig hebt
-const apiResponse = await fetch('https://fdnd-agency.directus.app/items/adconnect_nominations')
+const apiResponse = await fetch('https://fdnd-agency.directus.app/items/adconnect_news')
 
 // Lees van de response van die fetch het JSON object in, waar we iets mee kunnen doen
 const apiResponseJSON = await apiResponse.json()
 
 // Controleer eventueel de data in je console
 // (Let op: dit is _niet_ de console van je browser, maar van NodeJS, in je terminal)
-// console.log(apiResponseJSON)
+console.log(apiResponseJSON)
 
 
 // Maak een nieuwe Express applicatie aan, waarin we de server configureren
@@ -40,50 +40,46 @@ app.set('views', './views')
 app.get('/', async function (request, response) {
    // Render index.liquid uit de Views map
    // Geef hier eventueel data aan mee
-   console.log(apiResponseJSON)
-   response.render('index.liquid', {nominaties: apiResponseJSON.data} )
+  //  console.log(apiResponseJSON)
+   response.render('index.liquid', {news: apiResponseJSON.data} )
 })
 
-// ROUTE: GENOMINEERDE STUDENTEN PAGINA
-// Deze route toont een pagina met genomineerde studenten
-// De data hieronder is dummy data (tijdelijke testdata)
+// app.get('/over-ons', async function (request, response) {
+// response.render('over-ons.liquid')
+// })
 
-app.get('/award', async function (request, response) {
-
-  // Maak een array met genomineerde studenten
-  // Elke student heeft een naam, school en afbeelding
-  const nominees = [
-    {
-      name: "Thijs Kiens",
-      school: "Avans Academie Associate degrees",
-     
-    },
-    {
-      name: "Vera Driessen",
-      school: "Fontys",
-     
-    },
-    {
-      name: "Josien te Winkel",
-      school: "Grenslandcollege",
-     
-    },
-    {
-      name: "Rick Snijder",
-      school: "Hanze",
-    
-    },
-    {
-      name: "Stan van Roessel",
-      school: "HAS",
-     
-    }
-  ]
-
-  // Render de Liquid view 'genomineerden.liquid'
-  // en geef de dummy data (nominees) mee aan de template
-  response.render('genomineerden.liquid', { nominees: nominees })
+app.get('/lado', async function (request, response) {
+response.render('lado.liquid')
 })
+
+// app.get('/talent-awards', async function (request, response) {
+// response.render('talent-awards.liquid')
+// })
+
+// app.get('/contact', async function (request, response) {
+// response.render('contact.liquid')
+// })
+
+// app.get('/over-ad', async function (request, response) {
+// response.render('over-ad.liquid')
+// })
+
+// app.get('/nieuws', async function (request, response) {
+// response.render('nieuws.liquid')
+// })
+
+// app.get('/publicaties', async function (request, response) {
+// response.render('publicaties.liquid')
+// })
+
+// app.get('/events', async function (request, response) {
+// response.render('events.liquid')
+// })
+
+app.use((request, response) => {
+  response.render("404.liquid");
+})
+
 
 // Maak een POST route voor de index; hiermee kun je bijvoorbeeld formulieren afvangen
 // Hier doen we nu nog niets mee, maar je kunt er mee spelen als je wilt

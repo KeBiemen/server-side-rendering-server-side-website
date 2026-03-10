@@ -24,10 +24,6 @@
   --tekst-zacht: rgba(255, 255, 255, 0.85);
   --lijn: rgba(255, 255, 255, 0.35);
 
-  /* “Glass” surfaces */
-  --surface: rgba(0, 0, 0, 0.35);
-  --surface-2: rgba(0, 0, 0, 0.22);
-  --border: rgba(255, 255, 255, 0.16);
 
   /* TYPOGRAFIE */
   --font: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -161,8 +157,10 @@ p {
 
 .middle-secion {
   text-align: center;
-  max-width: 50em;
   padding: 1rem 2rem 4rem;
+    display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 
@@ -191,9 +189,16 @@ div {
   background-color: var(--tekst);
   padding: 2em;
   border-radius: 1em;
-  max-width: 20em;
+  max-width: 19em;
   color: var(--merk-900);
 }
+
+.section-list{
+ display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
 
 footer {
   background-color: var(--merk-500);
