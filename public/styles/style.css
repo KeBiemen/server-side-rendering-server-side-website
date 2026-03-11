@@ -103,6 +103,11 @@ p {
   padding: 3em 0 0 3em;
 }
 
+.hero-lado{
+  background-color: var(--merk-500);
+  color: var(--tekst);
+}
+
 .hero-aricle {
   grid-column-start: 1;
   padding-bottom: 2em;
@@ -199,15 +204,19 @@ div {
   align-items: center; 
 }
 
+.section-articles:nth-of-type(even){
+  background-color: var(--merk-100);
+  color: var(--merk-900);
+}
 
 footer {
+  text-align: left;
   background-color: var(--merk-500);
   color: var(--tekst);
   margin-top: 5em;
   border-radius: 2em 2em 0 0;
-  display: grid;
-  grid-template-columns: repeat(3, auto);
-  grid-auto-rows: auto;
+  display: flex;
+ flex-direction: column;
   padding: 1em;
 }
 
